@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Vue.js VeeValidation Sample</title>
+</head>
+
+<body>
+    <div id="app">
+        {{ message }}
+        <div>
+            <label>メールアドレス：</label>
+            <input v-validate="'required|email'" name="email" type="text">
+            <span>{{ errors.first('email') }}</span>
+        </div>
+        <div>
+            <label>数値入力：</label>
+            <input v-validate="'numeric'" data-vv-as="field" name="numeric_field" type="text">
+            <span>{{ errors.first('numeric_field') }}</span>
+        </div>
+    </div>
+    
+    <script src="./js/validation/vee-validate.min.js"></script>
+    <script src="./js/validation/locale/ja.js"></script>
+    <script src="./js/vue.min.js"></script>
+    <script src="./js/validation/app_validation.js"></script>
+</body>
+</html>
